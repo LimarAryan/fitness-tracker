@@ -1,0 +1,17 @@
+# Dependencies installed by npm.
+node_modules/
+
+# Frontend production output.
+fitness-frontend/build/
+
+# Local runtime data and logs.
+fitness-backend/data/
+*.log
+
+# Environment files can contain local machine settings.
+.env.local
+.env.*.local
+
+# OS/editor noise.
+.DS_Store
+Thumbs.db

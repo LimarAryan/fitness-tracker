@@ -1,0 +1,15 @@
+{
+  "short_name": "Fitness",
+  "name": "Fitness Tracker",
+  "icons": [
+    {
+      "src": "fitness-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1d7a4f",
+  "background_color": "#f5f7fb"
+}

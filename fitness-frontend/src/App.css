@@ -1,0 +1,437 @@
+:root {
+  /* Shared design tokens for the fitness dashboard theme. */
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-soft: #eef6f1;
+  --text: #16201a;
+  --muted: #66736c;
+  --border: #dce6df;
+  --primary: #1d7a4f;
+  --primary-dark: #135c3a;
+  --blue: #245d9f;
+  --warning: #a56016;
+  --danger: #b42318;
+  --shadow: 0 18px 45px rgba(22, 32, 26, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  /* Center the app while leaving a comfortable gutter on mobile and desktop. */
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.app-header {
+  /* Header combines the product title with the active profile controls. */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.user-panel,
+.auth-panel,
+.content-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.user-panel {
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px;
+}
+
+.auth-panel {
+  margin: 18px 0;
+  padding: 16px;
+}
+
+.auth-form {
+  /* Login/register controls are dense on desktop and collapse in the mobile media query. */
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(180px, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.auth-toggle {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(84px, 1fr));
+  gap: 4px;
+  padding: 4px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.auth-toggle button,
+.tab-bar button {
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.auth-toggle button {
+  padding: 10px 12px;
+}
+
+.auth-toggle button.selected {
+  background: var(--surface);
+  color: var(--primary-dark);
+  box-shadow: 0 1px 4px rgba(22, 32, 26, 0.12);
+}
+
+.auth-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.form-error {
+  grid-column: 1 / -1;
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.tab-bar {
+  /* Top-level navigation switches between calorie, exercise, and settings sections. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.tab-bar button {
+  min-width: 116px;
+  padding: 12px 18px;
+  background: #e7ece9;
+}
+
+.tab-bar button.active {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.content-panel {
+  padding: 24px;
+}
+
+.section-title {
+  margin: 0 0 18px;
+  font-size: 1.55rem;
+  letter-spacing: 0;
+}
+
+.grid-2 {
+  /* The meal form uses two columns on larger screens and one column on phones. */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.form-vertical {
+  display: grid;
+  gap: 12px;
+  max-width: 540px;
+}
+
+.input,
+.small-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--text);
+  outline: none;
+}
+
+.input {
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+.small-input {
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.input:focus,
+.small-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(29, 122, 79, 0.14);
+}
+
+.controls {
+  /* Keeps save, date filtering, and barcode controls aligned as a compact toolbar. */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn {
+  min-height: 40px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 9px 14px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.68;
+}
+
+.btn-primary {
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-scan {
+  background: var(--blue);
+}
+
+.btn-warning {
+  background: var(--warning);
+}
+
+.btn-danger {
+  background: var(--danger);
+}
+
+.btn-ghost {
+  background: #ffffff;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-small {
+  min-height: 34px;
+  padding: 7px 10px;
+  font-size: 0.88rem;
+}
+
+.scanner-preview,
+.totals-card,
+.settings-card,
+.entry-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+}
+
+.scanner-preview {
+  /* Camera preview frame for barcode scanning, including the overlay target below. */
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+  margin: 14px 0;
+}
+
+.barcode-status {
+  margin: -4px 0 14px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.video-responsive {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.scan-frame {
+  /* Visual target area so users know where to hold the barcode. */
+  position: absolute;
+  inset: 12px;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.scan-frame::before {
+  content: "";
+  width: min(82%, 620px);
+  height: min(42%, 220px);
+  border: 3px solid rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 0 0 999px rgba(0, 0, 0, 0.28);
+}
+
+.scan-frame span {
+  position: absolute;
+  width: min(76%, 560px);
+  height: 3px;
+  background: #23d18b;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(35, 209, 139, 0.72);
+}
+
+.totals-card {
+  /* Daily nutrition summary derived from the selected date's meals. */
+  margin: 18px 0;
+  padding: 16px;
+}
+
+.entry-list,
+.list-space {
+  /* Shared list rhythm for meal entries and exercises. */
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.entry-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px;
+}
+
+.entry-meta {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.font-medium {
+  font-weight: 800;
+}
+
+.settings-card {
+  display: grid;
+  gap: 10px;
+  max-width: 540px;
+  padding: 16px;
+}
+
+.toast-message {
+  /* Temporary confirmation message after successful saves/scans. */
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 10;
+  max-width: min(380px, calc(100vw - 44px));
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--primary-dark);
+  color: #ffffff;
+  box-shadow: var(--shadow);
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  /* Tablet layout stacks wide horizontal panels to avoid text squeezing. */
+  .app-header,
+  .entry-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .auth-form {
+    grid-template-columns: 1fr;
+  }
+
+  .user-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Phone layout gives forms and scanner controls the full available width. */
+  .app-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 18px;
+  }
+
+  .content-panel {
+    padding: 16px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .controls,
+  .footer-right,
+  .auth-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tab-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .video-responsive {
+    aspect-ratio: 3 / 4;
+    max-height: 72vh;
+  }
+
+  .scan-frame::before {
+    width: 88%;
+    height: 30%;
+  }
+}
