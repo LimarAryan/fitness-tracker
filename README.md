@@ -59,6 +59,52 @@ The app is designed for local use and personal tracking. Nutrition values from t
 - Run the full stack with Docker Compose.
 - Keep local SQLite data out of git.
 
+## How to Run
+
+### Option 1: Run with Docker Compose
+
+From the project root:
+
+```powershell
+docker compose up --build
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+The backend API will run at:
+
+```text
+http://localhost:5000
+```
+
+### Option 2: Run Locally with npm
+
+Install and start the backend:
+
+```powershell
+cd fitness-backend
+npm install
+npm start
+```
+
+In a second terminal, install and start the frontend:
+
+```powershell
+cd fitness-frontend
+npm install
+npm start
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
 ## Project Structure
 
 ```text
