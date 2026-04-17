@@ -1,3 +1,5 @@
+(fitness-app-img.png)
+
 # Fitness Tracker
 
 Fitness Tracker is a full-stack web app for tracking meals, calories, macros, and simple workout exercises. It includes browser-based barcode scanning with Open Food Facts integration, so food products can be scanned or looked up by barcode and automatically fill in nutrition fields.
