@@ -310,8 +310,8 @@ h1 {
 
 .scan-frame::before {
   content: "";
-  width: min(82%, 620px);
-  height: min(42%, 220px);
+  width: min(92%, 760px);
+  height: min(58%, 330px);
   border: 3px solid rgba(255, 255, 255, 0.95);
   border-radius: 8px;
   box-shadow: 0 0 0 999px rgba(0, 0, 0, 0.28);
@@ -319,11 +319,53 @@ h1 {
 
 .scan-frame span {
   position: absolute;
-  width: min(76%, 560px);
+  width: min(84%, 680px);
   height: 3px;
   background: #23d18b;
   border-radius: 999px;
   box-shadow: 0 0 12px rgba(35, 209, 139, 0.72);
+}
+
+.scan-frame::after {
+  content: "";
+  position: absolute;
+  width: min(42%, 320px);
+  height: min(68%, 420px);
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+}
+
+.scanner-tools {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 24px rgba(22, 32, 26, 0.18);
+}
+
+.scanner-tools .small-input {
+  max-width: 260px;
+}
+
+.zoom-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 180px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.zoom-control input {
+  min-width: 120px;
 }
 
 .totals-card {
@@ -431,7 +473,26 @@ h1 {
   }
 
   .scan-frame::before {
-    width: 88%;
-    height: 30%;
+    width: 92%;
+    height: 48%;
+  }
+
+  .scan-frame::after {
+    width: 54%;
+    height: 68%;
+  }
+
+  .scanner-tools {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .scanner-tools .small-input,
+  .zoom-control {
+    max-width: none;
+    width: 100%;
   }
 }
