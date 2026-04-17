@@ -1,4 +1,4 @@
-(fitness-app-img.png)
+![Fitness App Image](fitness-app-img.png)
 
 # Fitness Tracker
 
