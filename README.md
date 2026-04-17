@@ -1,18 +1,63 @@
 # Fitness Tracker
 
-Fitness Tracker is a local full-stack app for logging meals, calories, macros, and simple workout exercises. It includes barcode lookup through Open Food Facts so scanned food products can automatically populate calories, protein, fat, and carbohydrates while still leaving those fields editable.
+Fitness Tracker is a full-stack web app for tracking meals, calories, macros, and simple workout exercises. It includes browser-based barcode scanning with Open Food Facts integration, so food products can be scanned or looked up by barcode and automatically fill in nutrition fields.
+
+The app is designed for local use and personal tracking. Nutrition values from the API stay editable, so users can correct calories, protein, fat, or carbs before saving a meal entry.
+
+## What It Does
+
+- Tracks daily food entries by date.
+- Calculates daily totals for calories, protein, fat, and carbohydrates.
+- Scans food barcodes from the browser camera.
+- Looks up product nutrition data from Open Food Facts.
+- Lets users manually edit API-filled nutrition values before saving.
+- Logs simple workout exercises with reps and sets.
+- Supports password-backed accounts and quick local profiles.
+- Stores data locally in SQLite.
 
 ## Features
 
-- Daily meal and macro tracking
-- Barcode scanning from the browser camera
-- Manual barcode lookup fallback
-- Open Food Facts product lookup and local food caching
-- Editable calories, proteins, fats, and carbs after lookup
-- Simple exercise logging with reps and sets
-- Login, registration, and local profile support
-- SQLite-backed local data store
-- Docker Compose setup for frontend and backend
+### Nutrition Tracking
+
+- Add foods manually or by barcode.
+- Track calories, protein, fat, and carbs.
+- View totals for the selected day.
+- Edit or delete saved meal entries.
+- Preserve zero-value nutrition data, such as bottled water with `0` calories and `0` macros.
+
+### Barcode Scanning
+
+- Uses the browser camera for barcode detection.
+- Supports common food barcode formats including UPC-A, UPC-E, EAN-13, EAN-8, Code 128, Code 39, ITF, Codabar, and QR.
+- Includes a manual barcode lookup fallback.
+- Includes a capture-frame option for difficult webcams or blurry barcode previews.
+- Allows camera switching and zoom controls when supported by the browser/device.
+
+### Open Food Facts Integration
+
+- Uses the Open Food Facts API v2 product endpoint.
+- Sends a custom User-Agent.
+- Requests only the fields needed by the app.
+- Caches product results locally in SQLite.
+- Keeps product lookup requests under the documented Open Food Facts rate limit.
+
+### Exercise Tracking
+
+- Add simple exercises with reps and sets.
+- View saved exercise entries.
+- Delete exercises from the list.
+
+### Accounts and Local Profiles
+
+- Register and log in with email/password.
+- Use a local profile without creating a password-backed account.
+- Store session/profile data in browser local storage for convenience.
+
+### Deployment and Development
+
+- Run frontend and backend separately with npm.
+- Run the full stack with Docker Compose.
+- Keep local SQLite data out of git.
 
 ## Project Structure
 
